@@ -69,7 +69,7 @@ class OrderDetailView(APIView):
         return JsonResponse(payload)
 
 class OrderGainView(APIView):
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None, id=0, *args, **kwargs):
         try:
@@ -106,7 +106,7 @@ class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
 
 class OrdersOfClientView(APIView):
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     
     def get(self, request, format=None, id=0, *args, **kwargs):
         try:
